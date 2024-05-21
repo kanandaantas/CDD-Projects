@@ -1,0 +1,52 @@
+class ContaBancaria:
+    def __init__(self, numero, nome,tipo):
+        self.numero = numero
+        self.saldo = False
+        self.nome = nome
+        self.tipo = tipo
+        self.status = False
+        #self.limite = limite
+
+    def depositar(self, deposito):
+        if self.status == False:
+            print("Ative sua conta para prosseguir.")
+        else:
+            if deposito <= 0:
+                print("Digite um valor maior que 0.")
+            else:
+                self.saldo = self.saldo + deposito
+                print("Depósito realizado.")
+
+    def sacar(self, saque):
+        if self.status == False:
+            print("Ative sua conta para prosseguir.")
+        else:
+            if saque > self.saldo:
+                print("Saque negado, limite execedido.")
+            else:
+                if saque <= 0:
+                    print("Digite um número diferente de 0.")
+                else:
+                    self.saldo = self.saldo - saque
+                    print("Saque realizado.")
+    def ativarconta(self):
+        if self.status == True:
+            print("Sua conta já está ativada")
+        else:
+            print("Conta ativada com sucesso.")
+            self.status = True
+
+    def desativarconta(self):
+        if self.status == False:
+            print("Sua conta já está desativada.")
+        else:
+            if self.saldo != 0:
+                print("Seu saldo está acima de 0, não podemos desativar.")
+            else:
+                print("Conta desativada com sucesso.")
+                self.status = False
+    def verificarsaldo(self):
+        if self.status == False:
+            print("Ative sua conta para prosseguir.")
+        else:
+            print(f"Seu saldo é de {self.saldo}.")
