@@ -1,69 +1,39 @@
-{
-  "nbformat": 4,
-  "nbformat_minor": 0,
-  "metadata": {
-    "colab": {
-      "provenance": [],
-      "authorship_tag": "ABX9TyO3JnfphONtje9I/EoHCeZL"
-    },
-    "kernelspec": {
-      "name": "python3",
-      "display_name": "Python 3"
-    },
-    "language_info": {
-      "name": "python"
-    }
-  },
-  "cells": [
-    {
-      "cell_type": "code",
-      "execution_count": null,
-      "metadata": {
-        "id": "fG7s2VhdzbiX"
-      },
-      "outputs": [],
-      "source": [
-        "print(\"Jokenpo\")\n",
-        "\n",
-        "j1 = input(\"Nome do jogador 1: \")\n",
-        "j2 = input(\"Nome do jogador 2: \")\n",
-        "\n",
-        "print(\"Pedra, papel e tesooooura\")\n",
-        "\n",
-        "j01 = input(f\"{j1}: \")\n",
-        "j02 = input(f\"{j2}: \")\n",
-        "\n",
-        "if j01 in 'pedraPEDRA':\n",
-        "  if j02 in 'pedraPEDRA':\n",
-        "    print(\"Empate!\")\n",
-        "  elif j02 in 'papelPAPEL':\n",
-        "    print(f\"{j1} ganhou!\")\n",
-        "  elif j02 in 'tesouraTESOURA':\n",
-        "    print(f\"{j1} ganhou!\")\n",
-        "  else:\n",
-        "    print(f\"Resposta inválida de {j2}.\")\n",
-        "elif j01 in 'papelPAPEL':\n",
-        "  if j02 in 'pedraPEDRA':\n",
-        "    print(f\"{j2} ganhou!\")\n",
-        "  elif j02 in 'papelPAPEL':\n",
-        "    print(\"Empate!\")\n",
-        "  elif j02 in 'tesouraTESOURA':\n",
-        "    print(f\"{j2} ganhou!\")\n",
-        "  else:\n",
-        "    print(f\"Resposta inválida de {j2}.\")\n",
-        "elif j01 in 'tesouraTESOURA':\n",
-        "  if j02 in 'pedraPEDRA':\n",
-        "    print(f\"{j2} ganhou!\")\n",
-        "  elif j02 in 'papelPAPEL':\n",
-        "    print(f\"{j1} ganhou!\")\n",
-        "  elif j02 in 'tesouraTESOURA':\n",
-        "    print(f\"Empate!\")\n",
-        "  else:\n",
-        "    print(f\"Resposta inválida de {j2}.\")\n",
-        "else:\n",
-        "  print(f\"Resposta inválida de {j1}.\")\n",
-        "\n"
-      ]
-    }
-  ]
-}
+print("Jokenpo")
+
+j1 = input("Nome do jogador 1: ")
+j2 = input("Nome do jogador 2: ")
+
+print("Pedra, papel e tesooooura")
+
+j01 = input(f"{j1}: ")
+j02 = input(f"{j2}: ")
+
+if j01 in 'pedraPEDRA':
+  if j02 in 'pedraPEDRA':
+    print("Empate!")
+  elif j02 in 'papelPAPEL':
+    print(f"{j1} ganhou!")
+  elif j02 in 'tesouraTESOURA':
+    print(f"{j1} ganhou!")
+  else:
+    print(f"Resposta inválida de {j2}.")
+elif j01 in 'papelPAPEL':
+  if j02 in 'pedraPEDRA':
+    print(f"{j2} ganhou!")
+  elif j02 in 'papelPAPEL':
+    print("Empate!")
+  elif j02 in 'tesouraTESOURA':
+    print(f"{j2} ganhou!")
+  else:
+    print(f"Resposta inválida de {j2}.")
+elif j01 in 'tesouraTESOURA':
+  if j02 in 'pedraPEDRA':
+    print(f"{j2} ganhou!")
+  elif j02 in 'papelPAPEL':
+    print(f"{j1} ganhou!")
+  elif j02 in 'tesouraTESOURA':
+    print(f"Empate!")
+  else:
+    print(f"Resposta inválida de {j2}.")
+else:
+  print(f"Resposta inválida de {j1}.")
