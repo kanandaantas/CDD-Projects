@@ -1,0 +1,30 @@
+print("Jokenpo")
+
+opcoes = ['Pedra', 'Papel', 'Tesoura']
+op_aleatoria = random.choice(opcoes)
+op_aleatoria1 = random.choice(opcoes)
+
+print(f"Jogador 1: {op_aleatoria}")
+print(f"Jogador 2: {op_aleatoria1}")
+
+if op_aleatoria in 'Pedra':
+  if op_aleatoria1 in 'Pedra':
+    print("Empate!")
+  elif op_aleatoria1 in 'Papel':
+    print(f"Papel ganhou!")
+  else:
+    print(f"Pedra ganhou!")
+elif op_aleatoria in 'Papel':
+  if op_aleatoria1 in 'Pedra':
+    print(f"Papel ganhou!")
+  elif op_aleatoria1 in 'Papel':
+    print("Empate!")
+  else:
+    print(f"Tesoura ganhou!")
+else:
+  if op_aleatoria1 in 'Pedra':
+    print(f"Pedra ganhou!")
+  elif op_aleatoria1 in 'Papel':
+    print(f"Tesoura ganhou!")
+  else:
+    print(f"Empate!")
