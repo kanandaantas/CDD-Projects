@@ -1,0 +1,25 @@
+class Forma():
+    def __init__(self):
+        self.area = 0
+        self.perimetro = 0
+
+class Retangulo(Forma):
+    def __init__(self):
+        super().__init__()
+    def calculaArea(self,base,altura):
+        self.area = base*altura
+        print(f"A área do retângulo é igual a: {self.area}")
+    def calculaPerimetro(self,lado,base):
+        self.perimetro = (lado+base)*2
+        print(f"O perímetro do retângulo é igual a: {self.perimetro}")
+
+class Triangulo(Forma):
+    def __init__(self):
+        super().__init__()
+
+    def calculaArea(self,base,altura):
+        self.area = (base * altura)/2
+        print(f"A área é igual a: {self.area}")
+    def calculaPerimetro(self,base,lado):
+        self.perimetro = base + (lado*2)
+        print(f"O perímetro é igual a: {self.perimetro}")
