@@ -1,1 +1,39 @@
+print("Jokenpo")
 
+j1 = input("Nome do jogador 1: ")
+j2 = input("Nome do jogador 2: ")
+
+print("Pedra, papel e tesooooura")
+
+j01 = input(f"{j1}: ")
+j02 = input(f"{j2}: ")
+
+if j01 in 'pedraPEDRA':
+  if j02 in 'pedraPEDRA':
+    print("Empate!")
+  elif j02 in 'papelPAPEL':
+    print(f"{j1} ganhou!")
+  elif j02 in 'tesouraTESOURA':
+    print(f"{j1} ganhou!")
+  else:
+    print(f"Resposta inválida de {j2}.")
+elif j01 in 'papelPAPEL':
+  if j02 in 'pedraPEDRA':
+    print(f"{j2} ganhou!")
+  elif j02 in 'papelPAPEL':
+    print("Empate!")
+  elif j02 in 'tesouraTESOURA':
+    print(f"{j2} ganhou!")
+  else:
+    print(f"Resposta inválida de {j2}.")
+elif j01 in 'tesouraTESOURA':
+  if j02 in 'pedraPEDRA':
+    print(f"{j2} ganhou!")
+  elif j02 in 'papelPAPEL':
+    print(f"{j1} ganhou!")
+  elif j02 in 'tesouraTESOURA':
+    print(f"Empate!")
+  else:
+    print(f"Resposta inválida de {j2}.")
+else:
+  print(f"Resposta inválida de {j1}.")
