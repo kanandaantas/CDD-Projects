@@ -1,30 +1,37 @@
 print("Jokenpo")
+resposta = 'sim' and 'SIM'
+import random
 
-opcoes = ['Pedra', 'Papel', 'Tesoura']
-op_aleatoria = random.choice(opcoes)
-op_aleatoria1 = random.choice(opcoes)
+while resposta == 'sim' or resposta == 'SIM':
 
-print(f"Jogador 1: {op_aleatoria}")
-print(f"Jogador 2: {op_aleatoria1}")
+  opcoes = ['Pedra', 'Papel', 'Tesoura']
+  op_aleatoria1 = random.choice(opcoes)
 
-if op_aleatoria in 'Pedra':
-  if op_aleatoria1 in 'Pedra':
-    print("Empate!")
-  elif op_aleatoria1 in 'Papel':
-    print(f"Papel ganhou!")
+  j1 = input("Jogador 1: ")
+  print(f"Jogador 2: {op_aleatoria1}")
+
+  if j1 in 'PEDRApedra':
+    if op_aleatoria1 in 'Pedra':
+      print("Empate!")
+    elif op_aleatoria1 in 'Papel':
+      print(f"Papel ganhou!")
+    else:
+      print(f"Pedra ganhou!")
+  elif j1 in 'PAPELpapel':
+    if op_aleatoria1 in 'Pedra':
+      print(f"Papel ganhou!")
+    elif op_aleatoria1 in 'Papel':
+      print("Empate!")
+    else:
+      print(f"Tesoura ganhou!")
+  elif j1 in'TESOURAtesoura':
+    if op_aleatoria1 in 'Pedra':
+      print(f"Pedra ganhou!")
+    elif op_aleatoria1 in 'Papel':
+      print(f"Tesoura ganhou!")
+    else:
+      print(f"Empate!")
   else:
-    print(f"Pedra ganhou!")
-elif op_aleatoria in 'Papel':
-  if op_aleatoria1 in 'Pedra':
-    print(f"Papel ganhou!")
-  elif op_aleatoria1 in 'Papel':
-    print("Empate!")
-  else:
-    print(f"Tesoura ganhou!")
-else:
-  if op_aleatoria1 in 'Pedra':
-    print(f"Pedra ganhou!")
-  elif op_aleatoria1 in 'Papel':
-    print(f"Tesoura ganhou!")
-  else:
-    print(f"Empate!")
+    print("Opção inválida do jogador 1.")
+
+  resposta = input("Gostaria de jogar novamente? ")
