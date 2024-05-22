@@ -1,0 +1,64 @@
+class Atleta():
+    def __init__(self,peso):
+        self.aposentado = False
+        self.desaposentado = True
+        self.aquecido = False
+        self.peso = peso
+    def aposentar(self):
+        if self.aposentado == False:
+            print("Aposentado(a).")
+            self.aposentado = True
+        else:
+            print("Já está aposentado.")
+  
+    def aquecer(self):
+        if self.aquecido == False:
+            print("Aqueceu.")
+            self.aquecer = True
+        else:
+            print("Já está aquecido(a)")
+
+class Corredor(Atleta):
+    def __init__(self,peso):
+        super().__init__(peso)
+
+    def correr(self):
+        if self.aposentar == False:
+            if self.aquecer == True:
+                print("Foi correr.")
+                self.correr = True
+            elif self.aquecer == False:
+                print("Precisa ir aquecer.")
+        else:
+            print("Atleta aposentado(a).")
+
+class Nadador(Atleta):
+    def __init__(self,peso):
+        super().__init__(peso)
+    def nadar(self):
+        if self.aposentar == False:
+            if self.aquecer == True:
+                print("Foi nadar.")
+                self.nadar = True
+            elif self.aquecer == False:
+                print("Precisa ir aquecer.")
+        else:
+            print("Atleta aposentado(a).")
+class Ciclista(Atleta):
+    def __init__(self,peso):
+        super().__init__(peso)
+
+    def pedalar(self):
+        if self.aposentar == False:
+            if self.aquecer == True:
+                print("Foi pedalar.")
+                self.pedalar = True
+            elif self.aquecer == False:
+                print("Precisa ir aquecer.")
+        else:
+            print("Atleta aposentado(a).")
+
+
+class TriAtleta(Corredor,Nadador,Ciclista):
+    def __init__(self,peso):
+        super().__init__(peso)
