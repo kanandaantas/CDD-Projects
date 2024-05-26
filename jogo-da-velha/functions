@@ -1,0 +1,208 @@
+import sys
+class JogoDaVelha():
+  def __init__(self):
+    self.l1 = ['', '', '']
+    self.l2 = ['', '', '']
+    self.l3 = ['', '', '']
+
+  def tabuleiro(self):
+    print(self.l1)
+    print(self.l2)
+    print(self.l3)
+  def jogadorX(self,linha,coluna):
+    if linha == '1':
+      if coluna == '1':
+        if self.l1[0] == 'X' or self.l1[0] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l1[0] = 'X'
+          self.tabuleiro()
+      elif coluna == '2':
+        if self.l1[1] == 'X' or self.l1[1] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l1[1] = 'X'
+          self.tabuleiro()
+      elif coluna == '3':
+        if self.l1[2] == 'X' or self.l1[2] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l1[2] = 'X'
+          self.tabuleiro()
+      else:
+        print("Opção inválida")
+    elif linha == '2':
+      if coluna == '1':
+        if self.l2[0] == 'X' or self.l2[0] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l2[0] = 'X'
+          self.tabuleiro()
+      elif coluna == '2':
+        if self.l2[1] == 'X' or self.l2[1] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l2[1] = 'X'
+          self.tabuleiro()
+      elif coluna == '3':
+        if self.l2[2] == 'X' or self.l2[2] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l2[2] = 'X'
+          self.tabuleiro()
+      else:
+        print("Opção inválida")
+    elif linha == '3':
+      if coluna == '1':
+        if self.l3[0] == 'X' or self.l3[0] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l3[0] = 'X'
+          self.tabuleiro()
+      elif coluna == '2':
+        if self.l3[1] == 'X' or self.l3[1] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l3[1] = 'X'
+          self.tabuleiro()
+      elif coluna == '3':
+        if self.l3[2] == 'X' or self.l3[2] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l3[2] = 'X'
+          self.tabuleiro()
+      else:
+        print("Opção inválida")
+    else:
+      print("Opção inválida")
+
+  def jogadorO(self,linha,coluna):
+    if linha == '1':
+      if coluna == '1':
+        if self.l1[0] == 'X' or self.l1[0] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l1[0] = 'O'
+          self.tabuleiro()
+      elif coluna == '2':
+        if self.l1[1] == 'X' or self.l1[1] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l1[1] = 'O'
+          self.tabuleiro()
+      elif coluna == '3':
+        if self.l1[2] == 'X' or self.l1[2] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l1[2] = 'O'
+          self.tabuleiro()
+      else:
+        print("Opção inválida")
+    elif linha == '2':
+      if coluna == '1':
+        if self.l2[0] == 'X' or self.l2[0] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l2[0] = 'O'
+          self.tabuleiro()
+      elif coluna == '2':
+        if self.l2[1] == 'X' or self.l2[1] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l2[1] = 'O'
+          self.tabuleiro()
+      elif coluna == '3':
+        if self.l2[2] == 'X' or self.l2[2] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l2[2] = 'O'
+          self.tabuleiro()
+      else:
+        print("Opção inválida")
+    elif linha == '3':
+      if coluna == '1':
+        if self.l3[0] == 'X' or self.l3[0] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l3[0] = 'O'
+          self.tabuleiro()
+      elif coluna == '2':
+        if self.l3[1] == 'X' or self.l3[1] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l3[1] = 'O'
+          self.tabuleiro()
+      elif coluna == '3':
+        if self.l3[2] == 'X' or self.l3[2] == 'O':
+          print("Espaço já ocupado.")
+        else:
+          self.l3[2] = 'O'
+          self.tabuleiro()
+      else:
+        print("Opção inválida")
+    else:
+      print("Opção inválida")
+
+  def pontuacao(self):
+    if self.l1[0] == self.l1[1] == self.l1[2] == 'X' or self.l1[0] == self.l1[1] == self.l1[2] == 'O':
+      if self.l1[0] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    elif self.l2[0] == self.l2[1] == self.l2[2] == 'X' or self.l2[0] == self.l2[1] == self.l2[2] == 'O':
+      if self.l2[0] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    elif self.l3[0] == self.l3[1] == self.l3[2] == 'X' or self.l3[0] == self.l3[1] == self.l3[2] == 'O':
+      if self.l3[0] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    elif self.l1[0] == self.l2[0] == self.l3[0] == 'X' or self.l1[0] == self.l2[0] == self.l3[0] == 'O':
+      if self.l1[0] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    elif self.l1[1] == self.l2[1] == self.l3[1] == 'X' or self.l1[1] == self.l2[1] == self.l3[1] == 'O':
+      if self.l1[1] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    elif self.l1[2] == self.l2[2] == self.l3[2] == 'X' or self.l1[2] == self.l2[2] == self.l3[2] == 'O':
+      if self.l1[2] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    elif self.l1[0] == self.l2[1] == self.l3[2] == 'X' or self.l1[0] == self.l2[1] == self.l3[2] == 'O':
+      if self.l1[0] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    elif self.l1[2] == self.l2[1] == self.l3[0] == 'X' or self.l1[2] == self.l2[1] == self.l3[0] == 'O':
+      if self.l1[2] == 'X':
+        print("X ganhou!")
+        sys.exit()
+      else:
+        print("O ganhou!")
+        sys.exit()
+    else:
+      if '' not in self.l1 and '' not in self.l2 and '' not in self.l3:
+        print("Empate!")
+        sys.exit()
+      else:
+        pass
