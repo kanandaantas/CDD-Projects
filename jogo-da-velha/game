@@ -1,0 +1,20 @@
+from classes import JogoDaVelha
+
+p1 = JogoDaVelha()
+jogadorAtual = 'X'
+print("Jogo da velha")
+p1.tabuleiro()
+
+while '' in p1.l1 or '' in p1.l2 or '' in p1.l3:
+    print(f"Jogador {jogadorAtual}")
+    linha = input("Escolha sua linha: ")
+    coluna = input("Escolha sua coluna: ")
+
+    if jogadorAtual == 'X':
+        p1.jogadorX(linha, coluna)
+    else:
+        p1.jogadorO(linha, coluna)
+
+    p1.pontuacao()
+
+    jogadorAtual = 'O' if jogadorAtual == 'X' else 'X'
