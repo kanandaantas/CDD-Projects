@@ -1,0 +1,35 @@
+import mysql.connector
+
+banco = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "123456",
+    database = "aulafinal"
+)
+
+esc = 0
+
+while esc != 3:
+    print("Menu\n""1- Mostrar os alunos\n""2- Inserir um novo aluno\n""3- Encerrar programa")
+    esc = int(input("Qual sua opção? "))
+
+    if esc == 1:
+        meucursor = banco.cursor()
+        pesquisa = 'select * from alunos;'
+        meucursor.execute(pesquisa)
+        # fetchall recebe tudo das pesquisa e retorna através de uma tupla
+        resultado = meucursor.fetchall()
+        for x in resultado:
+            print(x)
+    elif esc == 2:
+        nome1 = input("Digite o nome do aluno: ")
+        telefone1 = input("Digite o telefone: ")
+        cursor = banco.cursor()
+        sql = "insert into alunos (Nome,Telefone) values (%s,%s)"
+        data = (nome1, telefone1)
+        cursor.execute(sql, data)
+        banco.commit()
+    elif esc == 3:
+        cursor = banco.cursor()
+        cursor.close()
+        banco.close()
