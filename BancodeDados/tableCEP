@@ -1,0 +1,34 @@
+import requests, mysql.connector
+
+nome = input("Nome: ")
+cep = input("Digite o CEP: ")
+consulta = requests.get(f"https://viacep.com.br/ws/{cep}/json/")
+endereco = consulta.json()
+cep1 = endereco['cep']
+logradouro = endereco['logradouro']
+bairro = endereco['bairro']
+localidade = endereco['localidade']
+uf = endereco['uf']
+
+banco = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+    password = "123456",
+    database = "aulafinal"
+)
+
+cursor = banco.cursor()
+sql = "insert into cep (Nome,CEP,Logradouro,Bairro,Localidade,UF) values (%s,%s,%s,%s,%s,%s)"
+data = (nome, cep1, logradouro, bairro, localidade, uf)
+cursor.execute(sql, data)
+meucursor = banco.cursor()
+
+pesquisa = 'select * from cep;'
+meucursor.execute(pesquisa)
+# fetchall recebe tudo das pesquisa e retorna através de uma tupla
+resultado = meucursor.fetchall()
+for x in resultado:
+    print(x)
+banco.commit()
+cursor.close()
+banco.close()
